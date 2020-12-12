@@ -63,12 +63,12 @@ spec_r_lowpass = abs(fftshift(ruido_lowpass));
 %-------------------------Plot dos Espectros------------------------------------
 
 figure;
-subplot(1, 6, 1), imshow(log(spec_img+1),[]); title('Espectro da imagem original');
-subplot(1, 6, 2), imshow(log(spec_ruido+1), []); title('Espectro da imagem ruidosa');
-subplot(1, 6, 3), imshow(log(spec_passaalta+1),[]); title('Espectro do passa alta');
-subplot(1, 6, 4), imshow(log(spec_passabaixa+1), []); title('Espectro passa baixa');
-subplot(1, 6, 5), imshow(log(spec_r_highpass+1),[]); title('Espectro do ruido passa alta');
-subplot(1, 6, 6), imshow(log(spec_r_lowpass+1), []); title('Espectro do ruido passa baixa');
+subplot(1, 4, 1), imshow(log(spec_img+1),[]); title('Espectro da imagem original');
+subplot(1, 4, 2), imshow(log(spec_ruido+1), []); title('Espectro da imagem ruidosa');
+ubplot(1, 4, 3), imshow(log(spec_r_highpass+1),[]); title('Espectro da imagem ruidosa + passa alta');
+subplot(1, 4, 4), imshow(log(spec_r_lowpass+1), []); title('Espectro da imagem ruidosa + passa baixa');
+%subplot(1, 6, 5), imshow(log(spec_passaalta+1),[]); title('Espectro do passa alta');
+%subplot(1, 6, 6), imshow(log(spec_passabaixa+1), []); title('Espectro passa baixa');
 
 
 %--------------------Transformadas Inversas-------------------------------------
@@ -92,7 +92,7 @@ res_lowpass = res_lowpass(1:linha, 1:coluna);
 figure; 
 subplot(1, 4, 1), imshow(res), title('IDFT da imagem original');
 subplot(1, 4, 2), imshow(res_r), title('IDFT da imagem ruidosa');
-subplot(1, 4, 3), imshow(res_highpass), title('IDFT da imagem ruidosa com passa alta');
-subplot(1, 4, 4), imshow(res_lowpass), title('IDFT da imagem ruidosa com passa baixa');
+subplot(1, 4, 3), imshow(res_highpass), title('IDFT da imagem ruidosa + passa alta');
+subplot(1, 4, 4), imshow(res_lowpass), title('IDFT da imagem ruidosa + passa baixa');
 
 %--------------------------------------------------------------------------------

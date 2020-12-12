@@ -206,7 +206,7 @@ img = imread("rice_binary.png");
  %figure
  %imshow(diff)
 
-%Professor, o octave dá um problema na hora de plotar as imagens
+%Professor, o octave dá um problema na hora de plotar as imagens,
 %e as legendas do eixo y não aparecem ao aumentar a janela da figure
 %a primeira linha corresponde às imagens com convolução periodica,
 % e a segunda linha corresponde às imagens com convolução aperiodica

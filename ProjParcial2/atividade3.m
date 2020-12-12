@@ -9,11 +9,14 @@ img = imread("rice_binary.png");
 %img_pos_estruturante = imerode(img, strel('diamond',1));
 %img_pos_estruturante = imdilate(img_pos_estruturante, strel('disk',1,0));
 %img_pos_estruturante = imdilate(img_pos_estruturante, strel('disk',1,0));
+
 img_pos_estruturante = imerode(img,strel('line',1,50));
 img_pos_estruturante = imopen(img_pos_estruturante, strel('line', 2, 90));
 img_pos_estruturante = imerode(img_pos_estruturante, strel('diamond', 1));
 img_pos_estruturante = imopen(img_pos_estruturante, strel('rectangle', [2 2]));
-%siovani essa combinação é a que funcionou melhor, praticamente sem perdas de grãos pequenos.
+
+%siovani essa combinação é a que funcionou melhor, 
+%praticamente sem perdas de grãos pequenos e com uma boa separação de todo o resto
 
 %figure, imshow(img);
 
