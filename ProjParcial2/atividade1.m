@@ -158,55 +158,41 @@ img = imread("rice_binary.png");
 
 
  
- 
- 
-%--------------------------MAIN---------------------------------
-
- 
- img_norte = conv_periodica(img, norte); %chamando convolução períodica para o filtro norte
- img_sul = conv_periodica(img, sul); %chamando conv. periodica para o filtro sul
- img_leste = conv_periodica(img, leste); %filtro leste
- img_oeste = conv_periodica(img, oeste); %filtro oeste
-
- 
- img_norte2 = conv_aperiodica(img, norte); %chamando convolução aperíodica para o filtro norte
- img_sul2 = conv_aperiodica(img, sul); %chamando conv. aperiodica para o filtro sul
- img_leste2 = conv_aperiodica(img, leste); %filtro leste
- img_oeste2 = conv_aperiodica(img, oeste); %filtro oeste
-
- 
  %--------------------PLOTS-----------------------------------------------------
  
+ img_norte = conv_periodica(img, norte); %chamando convolução períodica para o filtro norte
  figure
  subplot(2, 4 , 1), imshow(img_norte)
- ylabel({'Convolução Periódica'}); 
- title('Filtro Norte')
+ title('Filtro Norte - Conv. Periodica')
  
+ img_sul = conv_periodica(img, sul); %chamando conv. periodica para o filtro sul
  subplot(2, 4, 2), imshow(img_sul)
- title('Filtro Sul')
+ title('Filtro Sul - Conv. Periodica')
  
+ img_leste = conv_periodica(img, leste); %filtro leste
  subplot(2, 4 , 3), imshow(img_leste) 
- title('Filtro Leste')
+ title('Filtro Leste - Conv. Periodica')
 
+ img_oeste = conv_periodica(img, oeste); %filtro oeste
  subplot(2, 4, 4), imshow(img_oeste)
- title('Filtro Oeste')
+ title('Filtro Oeste - Conv. Periodica')
  
- 
- subplot(2,4, 5), imshow(img_norte2)
- ylabel({'Convolução Aperiódica'});
+ img_norte2 = conv_aperiodica(img, norte); %chamando convolução aperíodica para o filtro norte
+ subplot(2, 4, 5), imshow(img_norte2)
+ title('Filtro Norte - Conv. Aperiodica')
 
+ img_sul2 = conv_aperiodica(img, sul); %chamando conv. aperiodica para o filtro sul
  subplot(2, 4, 6), imshow(img_sul2)
+ title('Filtro Sul - Conv. Aperiodica')
  
+ img_leste2 = conv_aperiodica(img, leste); %filtro leste 
  subplot(2, 4, 7), imshow(img_leste2)
+ title('Filtro Leste - Conv. Aperiodica')
  
+ img_oeste2 = conv_aperiodica(img, oeste); %filtro oeste
  subplot(2, 4, 8), imshow(img_oeste2)
- 
+ title('Filtro Oeste - Conv. Aperiodica')
  
  %diff = img_norte2 - img_norte;
  %figure
  %imshow(diff)
-
-%Professor, o octave dá um problema na hora de plotar as imagens,
-%e as legendas do eixo y não aparecem ao aumentar a janela da figure
-%a primeira linha corresponde às imagens com convolução periodica,
-% e a segunda linha corresponde às imagens com convolução aperiodica

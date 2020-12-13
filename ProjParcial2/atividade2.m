@@ -8,8 +8,8 @@ pkg load image
 
 %passabaixa = (1/9)*[1 1 1;1 1 1;1 1 1]; 
 %passabaixa = (1/5)*[0 1 0;1 1 1; 0 1 0]; 
-%passabaixa = (1/32)*[1 3 1;3 16 3;1 3 1];
-passabaixa = (1/8)*[0 1 0; 1 4 1; 0 1 0];
+passabaixa = (1/32)*[1 3 1;3 16 3;1 3 1];
+%passabaixa = (1/8)*[0 1 0; 1 4 1; 0 1 0];
 %passabaixa = (1/25)*[1 1 1 1 1;1 1 1 1 1;1 1 1 1 1;1 1 1 1 1;1 1 1 1 1];
 passaalta = [-1 -1 -1;-1 8 -1;-1 -1 -1]; 
 
@@ -18,7 +18,7 @@ passaalta = [-1 -1 -1;-1 8 -1;-1 -1 -1];
 img = imread("cameraman.png");
 img = im2double(img);
 
-img_ruidosa = imnoise(img, 'salt & pepper', 0.4);
+img_ruidosa = imnoise(img, 'salt & pepper', 0.3);
 
 %mostrando os subplots com as imagens original e com ruido
 subplot(1, 2, 1), subimage(img), title('Original')
@@ -65,7 +65,7 @@ spec_r_lowpass = abs(fftshift(ruido_lowpass));
 figure;
 subplot(1, 4, 1), imshow(log(spec_img+1),[]); title('Espectro da imagem original');
 subplot(1, 4, 2), imshow(log(spec_ruido+1), []); title('Espectro da imagem ruidosa');
-ubplot(1, 4, 3), imshow(log(spec_r_highpass+1),[]); title('Espectro da imagem ruidosa + passa alta');
+subplot(1, 4, 3), imshow(log(spec_r_highpass+1),[]); title('Espectro da imagem ruidosa + passa alta');
 subplot(1, 4, 4), imshow(log(spec_r_lowpass+1), []); title('Espectro da imagem ruidosa + passa baixa');
 %subplot(1, 6, 5), imshow(log(spec_passaalta+1),[]); title('Espectro do passa alta');
 %subplot(1, 6, 6), imshow(log(spec_passabaixa+1), []); title('Espectro passa baixa');
