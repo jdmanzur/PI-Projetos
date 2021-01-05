@@ -31,6 +31,10 @@ function output =  ela(img, compression)
 endfunction
 
 
+function output = noisedetection(img)
+  endfunction
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 img = imread("images/4.jpg");
 img_metadata = imfinfo("images/4.jpg"); %lê os metadados da imagem
 img_metadata %análise de metadados da imagen
