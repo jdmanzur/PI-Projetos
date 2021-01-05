@@ -1,6 +1,7 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Trabalho Final de Processamento de Imagens %
-% Implementação por:                         %
+% Implementaï¿½ï¿½o por:                         %
 % Bruno Carraza e Jade Manzur                %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -14,31 +15,28 @@ pkg load image
 
 function output =  ela(img, compression)
 
-  %implementação de Error Level Analysis
-  %salva a imagem em jpg, gerando compressao
+  %implementaï¿½ï¿½o de Error Level Analysis
+  %salva a imagem em jp gerando compressao
 
   imwrite(img,'tmp.jpg','Quality',compression); 
   %salva uma imagem temporaria, comprimindo-a com uma certa taxa de qualidade
-  img_ela = imread('tmp.jpg'); %lê a imagem salva
+  img_ela = imread('tmp.jpg'); %lï¿½ a imagem salva
 
 
-  %faz a subtração da imagem original com a imagem comprimida para observar as diferenças geradas pela compressao
+  %faz a subtracao da imagem original com a imagem comprimida para observar as diferenï¿½as geradas pela compressao
   output = (abs(double(img)-double(img_ela))*15);
 
-  %transforma a saída em grayscale;
+  %transforma a saida em grayscale;
   output=mean(output,3);
   
 endfunction
 
-
-function output = noisedetection(img)
-  endfunction
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 img = imread("images/4.jpg");
-img_metadata = imfinfo("images/4.jpg"); %lê os metadados da imagem
-img_metadata %análise de metadados da imagen
-output = ela(img, 70); %chama a função de error level analysis
+img_metadata = imfinfo("images/4.jpg"); %lï¿½ os metadados da imagem
+img_metadata %anï¿½lise de metadados da imagen
+output = ela(img, 70); %chama a funï¿½ï¿½o de error level analysis
 
 figure;
 subplot(2, 2, 1), imagesc(img), title("Imagem Original"); 
