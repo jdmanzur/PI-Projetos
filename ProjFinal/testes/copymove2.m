@@ -2,15 +2,15 @@ function copymove2(RGBimage)
 
 grayimage=rgb2gray(RGBimage); % converter RGB to gray
 [M ,N]=size(grayimage); %pega o tamanho da imagem
-grayimage = resize(grayimage, [M/4, N/4]);
+grayimage = resize(grayimage, [M/2, N/2]);
 [M, N] = size(grayimage);
-B=4; %bloco usado para analisar a imagem, dimensao B x B
+B=8; %bloco usado para analisar a imagem, dimensao B x B
 num_blocks=(M-B+1)*(N-B+1); %numero de blocos na imagem
 FVsize=4; %tamanho do vetor de atributoes
 FeatureMatrix=zeros(num_blocks,FVsize+3); 
 
-search_th=50; %threshold de procura
-MinDistance=80; %distancia minima entre elementos
+search_th=15; %threshold de procura
+MinDistance=50; %distancia minima entre elementos
 Similarity_th=0.5; %threshold de similaridade
 
 %%Cria uma mascara circular
@@ -64,11 +64,11 @@ dot=B;
 min_th=0.0;
 max_th=0.5;
 %Similarity_factor=(max_th-min_th)/(max_std);
-Similarity_factor = 0.0015;
+threshold = 0.0015;
 for u=1:num_blocks
     search_depth=min(num_blocks-u,search_th);
     %num_blocks-u == number de blocos restantes
-    threshold=Similarity_factor*FeatureMatrix(u,FVsize+3)+min_th;
+    %threshold=Similarity_factor*FeatureMatrix(u,FVsize+3)+min_th;
     
     for v=1:search_depth
         if norm(FeatureMatrix(u,FVsize+1:FVsize+2)-FeatureMatrix(u+v,FVsize+1:FVsize+2))>MinDistance %filtering by Distance Of Blocks -- filter near blocks

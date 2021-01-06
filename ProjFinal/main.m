@@ -15,8 +15,8 @@ pkg load signal
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%img = imread("images/4.jpg");
-%img_metadata = imfinfo("images/1.jpg"); %l� os metadados da imagem
+%img = imread("images/8.jpg");
+%img_metadata = imfinfo("images/8.jpg"); %l� os metadados da imagem
 %img_metadata %an�lise de metadados da imagen
 %output = ela(img, 70); %chama a fun��o de error level analysis
 
@@ -27,9 +27,9 @@ pkg load signal
 %subplot(2, 2, 2), imagesc(output), title("ELA - Imagem Original");
 
 
-%img_edited = imread("images/4-edited.jpg");
+%img_edited = imread("images/8-edited.jpg");
 
-%edited_metadata = imfinfo("images/4-edited.jpg");
+%edited_metadata = imfinfo("images/8-edited.jpg");
 %edited_metadata
 
 %output = ela(img_edited, 70);
@@ -39,4 +39,4 @@ pkg load signal
 
 %teste
 img_cpytest = imread("images/1-edited.jpg");
-copymove2(img_cpytest);
+copymove6(img_cpytest);
