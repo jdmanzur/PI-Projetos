@@ -15,28 +15,27 @@ pkg load signal
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%img = imread("images/8.jpg");
-%img_metadata = imfinfo("images/8.jpg"); %l� os metadados da imagem
-%img_metadata %an�lise de metadados da imagen
-%output = ela(img, 70); %chama a fun��o de error level analysis
+img = imread("images/8.jpg");
+img_metadata = imfinfo("images/8.jpg"); %l� os metadados da imagem
+img_metadata %an�lise de metadados da imagen
+output = ela(img, 70); %chama a fun��o de error level analysis
 
 
-%figure;
-%subplot(2, 2, 1), imagesc(img), title("Imagem Original"); 
+figure;
+subplot(2, 2, 1), imagesc(img), title("Imagem Original"); 
 %mostra as imagens na tela usando imagesc
-%subplot(2, 2, 2), imagesc(output), title("ELA - Imagem Original");
+subplot(2, 2, 2), imagesc(output), title("ELA - Imagem Original");
 
 
-%img_edited = imread("images/8-edited.jpg");
+img_edited = imread("images/8-edited.jpg");
+edited_metadata = imfinfo("images/8-edited.jpg");
+edited_metadata
 
-%edited_metadata = imfinfo("images/8-edited.jpg");
-%edited_metadata
-
-%output = ela(img_edited, 70);
-%subplot(2, 2, 3), imagesc(img_edited), title("Imagem Editada");
-%subplot(2, 2, 4), imagesc(output), title("ELA - Imagem Editada");
+output = ela(img_edited, 70);
+subplot(2, 2, 3), imagesc(img_edited), title("Imagem Editada");
+subplot(2, 2, 4), imagesc(output), title("ELA - Imagem Editada");
 
 
 %teste
 img_cpytest = imread("images/1-edited.jpg");
-copymove6(img_cpytest);
+copymove3(img_cpytest);
