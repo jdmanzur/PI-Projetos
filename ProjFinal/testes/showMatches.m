@@ -2,6 +2,7 @@ function showMatches(RGBimage,MatchList,Locations,B,color,showMap,showOrg,result
 mask=getCircleMask(B);
 [M,N,~]=size(RGBimage);
 num_matches=size(MatchList,1);
+num_matches
 %Mark Each Match in Map (binary image)
 map=false(M,N);
 if(~isempty(MatchList))

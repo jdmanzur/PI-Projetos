@@ -1,12 +1,11 @@
 function [MatchList ,num]=getMatches(FeatureMatrix,Locations,search_th,threshold,distance_th,size_matchlist,start)
-if ~exist( 'start', 'var' )
-    start=1;
-end
-if ~exist( 'size_matchlist', 'var' )
-    MatchList=[];
-else
-    MatchList=zeros(size_matchlist,2);
-end
+
+ start=1;
+
+
+ MatchList=[];
+ MatchList=zeros(size_matchlist,2);
+
 size_featurematrix=size(FeatureMatrix,1);
 num=0;
 for u=1:size_featurematrix-search_th
